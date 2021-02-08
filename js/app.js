@@ -1,4 +1,4 @@
-console.log('Your JS is linked up.  Be the person you needed when you were little.')
+console.log('Tic Tac Toe')
 
 /*----- constants -----*/
 
@@ -90,11 +90,11 @@ function render() {
     squares[index].textContent = mark;
     
     });
-    messages.textContent = win === 'T' ? `That's a tie, queen!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    messages.textContent = win === 'T' ? `That's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
     };
 
     // if ( win === 'T' ) {
-    //     messages.textContent = `That's a tie, queen!`
+    //     messages.textContent = `That's a tie!`
     //   } else if (win) { 
     //     messages.textContent = `${win} wins the game!`
     //   } else {

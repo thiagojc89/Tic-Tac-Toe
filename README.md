@@ -7,3 +7,11 @@
 4.	As a user, I should be shown a message whether I win (by aligning three X’s in a row, in a column, or diagonally), lose, or tie.
 5.	As a user, I should not be able to continue playing once I win, lose, or tie.
 6.	As a user, I should be able to play the game again by clicking Reset. -->
+
+<!-- 3 x 3 grid
+Make Your Mark
+Take Turns
+“X” and “O”
+Win Logic: align 3 in a row, in a column, or diagonally
+Declare a Tie
+The Game is Finished -->
