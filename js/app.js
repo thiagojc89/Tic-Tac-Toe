@@ -79,7 +79,9 @@ function init() {
     '', '', '',
     '', '', ''
     ];
-    render();
+    win = null;
+    turn = 'X';
+    render();    
 };
 
 function render() {
@@ -90,11 +92,11 @@ function render() {
     squares[index].textContent = mark;
     
     });
-    messages.textContent = win === 'T' ? `That's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
+    messages.textContent = win === 'T' ? `It's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
     };
 
     // if ( win === 'T' ) {
-    //     messages.textContent = `That's a tie!`
+    //     messages.textContent = `It's a tie!`
     //   } else if (win) { 
     //     messages.textContent = `${win} wins the game!`
     //   } else {
