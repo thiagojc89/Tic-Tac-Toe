@@ -59,6 +59,8 @@ function handleTurn(event) {
     let idx = squares.findIndex(function(square) {
     return square === event.target;
     });
+    // Check for invalid move
+    
     board[idx] = turn;
     turn = turn === 'X' ? 'O' : 'X';
 
@@ -93,7 +95,6 @@ function render() {
     
     });
     messages.textContent = win === 'T' ? `It's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
-    };
 
     // if ( win === 'T' ) {
     //     messages.textContent = `It's a tie!`
@@ -102,6 +103,6 @@ function render() {
     //   } else {
     //     messages.textContent = `It's ${turn}'s turn!`
     //   }
-
+};
 //be sure to call the init function!
 init();
