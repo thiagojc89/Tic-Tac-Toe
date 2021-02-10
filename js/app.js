@@ -60,10 +60,11 @@ function handleTurn(event) {
     return square === event.target;
     });
     // Check for invalid move
-    
-    board[idx] = turn;
-    turn = turn === 'X' ? 'O' : 'X';
-
+    // I can't believe it was this easy!
+    if (board[idx] === '') {    
+        board[idx] = turn;
+        turn = turn === 'X' ? 'O' : 'X';
+    }
     // In an if statement it would look like: 
     // if (turn === 'X') {
     // turn = 'O' 
