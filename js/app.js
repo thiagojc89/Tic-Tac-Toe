@@ -18,6 +18,7 @@ const winningCombos = [
 let board;
 let turn = 'X';
 let win;
+let winner = null;
 
 /*----- cached element references -----*/
 
@@ -32,7 +33,7 @@ document.getElementById('reset-button').addEventListener('click', init);
 /*----- functions -----*/
 
 function getWinner() {
-    let winner = null;
+    // let winner = null;
     winningCombos.forEach(function(combo, index) {
         if (board[combo[0]] && board[combo[0]] === board[combo[1]] && board[combo[0]] === board[combo[2]]) winner = board[combo[0]];
       });
@@ -56,11 +57,23 @@ function getWinner() {
 //     }
     
 function handleTurn(event) {
+    if (winner !== null) {
+        return
+    }
+    
     let idx = squares.findIndex(function(square) {
     return square === event.target;
     });
+
+    // if ( win === 'T' ) {
+    //      messages.textContent = `It's a tie!`
+    //   } else if (win) { 
+    //     messages.textContent = `${win} wins the game!`
+    //   } else {
+    //     messages.textContent = `It's ${turn}'s turn!`
+    //   }
+    
     // Check for invalid move
-    // I can't believe it was this easy!
     if (board[idx] === '') {    
         board[idx] = turn;
         turn = turn === 'X' ? 'O' : 'X';
@@ -96,7 +109,7 @@ function render() {
     
     });
     messages.textContent = win === 'T' ? `It's a tie!` : win ? `${win} wins the game!` : `It's ${turn}'s turn!`;
-
+    
     // if ( win === 'T' ) {
     //     messages.textContent = `It's a tie!`
     //   } else if (win) { 
