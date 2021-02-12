@@ -59,6 +59,7 @@ function getWinner() {
 function handleTurn(event) {
     if (winner !== null) {
         return
+        render();
     }
     
     let idx = squares.findIndex(function(square) {
